@@ -222,7 +222,7 @@ gulp.task('watch', ['watch:css', 'watch:js', 'watch:img']);
 /* server reload + watching js and css */
 gulp.task('reload', ['css', 'js'], () => {
     browserSync.init({
-        proxy: "http://main-pack/"
+        proxy: "http://js30/"
     });
     gulp.watch(cssSrc, ['css']);
     gulp.watch(`${source.js}**`, ['js']);
