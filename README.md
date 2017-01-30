@@ -11,3 +11,4 @@ https://javascript30.com
 * lesson-1 - creating browser drum kit;
 * lesson-2 - creating browser analog clock;
 * lesson-3 - dynamic css change on page;
+* lesson-4 - arrays methods;
