@@ -20,6 +20,7 @@
         <img class="img3" src="https://source.unsplash.com/7bwQXzbF6KE/800x500">
     </div>
 </div>
+<script src="<?= SITE_TEMPLATE_PATH.'dist/js/lesson-3.js'?>"></script>
 
 
 

@@ -1,0 +1,2 @@
+"use strict";$(document).ready(function(){function e(e){return e.replace(/^(a |the |an )/i,"").trim()}var n=["The Plot in You","The Devil Wears Prada","Pierce the Veil","Norma Jean","The Bled","Say Anything","The Midway State","We Came as Romans","Counterparts","Oh, Sleeper","A Skylit Drive","Anywhere But Here","An Old Dog"],t=n.sort(function(n,t){return e(n)>e(t)?1:-1});$("#bands").html(t.map(function(e){return"<li>"+e+"</li>"}).join(""))});
+//# sourceMappingURL=lesson-17.js.map

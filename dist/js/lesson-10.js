@@ -1,0 +1,2 @@
+"use strict";function _toConsumableArray(o){if(Array.isArray(o)){for(var r=0,n=Array(o.length);r<o.length;r++)n[r]=o[r];return n}return Array.from(o)}$(document).ready(function(){function o(o){var t=this,c=!1;o.shiftKey&&this.checked&&[].concat(_toConsumableArray(r)).forEach(function(o){console.log(o),o!==t&&o!==n||(c=!c,console.log("-------------")),c&&(o.checked=!0)}),n=this}var r=$('.inbox input[type="checkbox"]'),n=void 0;r.each(function(){$(this).on("click",o)})});
+//# sourceMappingURL=lesson-10.js.map

@@ -4,6 +4,7 @@
 
 
 <p><em>Psst: have a look at the JavaScript Console</em> 💁</p>
+<script src="<?= SITE_TEMPLATE_PATH.'dist/js/lesson-4.js'?>"></script>
 
 
 

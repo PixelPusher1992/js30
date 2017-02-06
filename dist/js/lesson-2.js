@@ -1,0 +1,2 @@
+"use strict";$(document).ready(function(){function t(){var t=new Date,a=t.getSeconds(),s=a/60*360+90;e.css("transform","rotate("+s+"deg)");var o=t.getMinutes(),d=o/60*360+90;r.css("transform","rotate("+d+"deg)");var c=t.getHours(),u=c/12*360+90;n.css("transform","rotate("+u+"deg)")}var e=$(".second-hand"),r=$(".min-hand"),n=$(".hour-hand");setInterval(t,1e3)});
+//# sourceMappingURL=lesson-2.js.map

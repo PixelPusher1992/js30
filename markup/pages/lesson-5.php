@@ -32,6 +32,7 @@
         </div>
     </div>
 </div>
+<script src="<?= SITE_TEMPLATE_PATH.'dist/js/lesson-5.js'?>"></script>
 
 
 

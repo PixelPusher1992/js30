@@ -12,6 +12,7 @@
         </div>
     </div>
 </div>
+<script src="<?= SITE_TEMPLATE_PATH.'dist/js/lesson-2.js'?>"></script>
 
 
 

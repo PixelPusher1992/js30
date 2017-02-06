@@ -12,6 +12,7 @@ require 'constants.php';
     <meta HTTP-EQUIV="Refresh" сontent="3" URL="pages/main.php">
     <link href="<?=SITE_DIR?>favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <link rel="stylesheet" href="<?=SITE_TEMPLATE_PATH.'dist/css/style.min.css'?>"/>
+    <script src="<?=SITE_TEMPLATE_PATH.'dist/js/lib.min.js'?>"></script>
 </head>
 <body>
 <?php include 'old-browser-warning.php'; ?>

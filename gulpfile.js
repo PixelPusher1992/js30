@@ -64,7 +64,9 @@ const path = {
         main: `${source.js}main.js`,
         jquery: `${source.js}jquery.min.js`,
         bootstrap: `${source.js}bootstrap.min.js`,
-        fancyBox: `${source.js}jquery.fancybox.pack.js`
+        fancyBox: `${source.js}jquery.fancybox.pack.js`,
+        promises: `${source.js}promise.min.js`,
+        fetch: `${source.js}fetch.js`
     },
     fonts: {
         fontawesome: 'bower_components/font-awesome/fonts/**',
@@ -79,7 +81,7 @@ const path = {
 
 /* paths groups */
 const cssSrc = [path.css.components, path.css.full];
-const jsSrc = [path.js.jquery, path.js.bootstrap, path.js.fancyBox];
+const jsSrc = [path.js.jquery, path.js.bootstrap, path.js.fancyBox, path.js.promises, path.js.fetch];
 const imgSrc = [path.images.main, path.images.sprite];
 
 
@@ -136,10 +138,10 @@ gulp.task('js:libs', () => {
 
 /* main task */
 gulp.task('js', () => {
-    gulp.src(path.js.main)
+    gulp.src(`${source.js}*.js`)
         .pipe(sourcemaps.init())
         .pipe(babel({ presets: ['es2015'] }))
-        .pipe(concat({path: 'main.min.js', cwd: ''}))
+        .on('error', errorLog)
         .pipe(uglify())
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(dist.js))
@@ -225,7 +227,7 @@ gulp.task('reload', ['css', 'js'], () => {
         proxy: "http://js30/"
     });
     gulp.watch(cssSrc, ['css']);
-    gulp.watch(`${source.js}**`, ['js']);
+    gulp.watch(`${source.js}*.js`, ['js']);
     gulp.watch('markup/**/*.php').on('change', browserSync.reload);
 });
 
@@ -306,6 +308,20 @@ gulp.task('copy:fancybox', () => {
         .pipe(gulp.dest(`${dist.img}fancyBox`))
 });
 gulp.task('use:fancybox', ['copy:fancybox', 'js:libs']);
+
+/* use promises */
+gulp.task('copy:promises', () => {
+    gulp.src('bower_components/promise-polyfill/promise.min.js')
+        .pipe(gulp.dest(source.js))
+});
+gulp.task('use:promises', ['copy:promises', 'js:libs']);
+
+/* use fetch */
+gulp.task('copy:fetch', () => {
+   gulp.src('bower_components/fetch/fetch.js')
+       .pipe(gulp.dest(source.js))
+});
+gulp.task('use:fetch', ['use:promises', 'copy:fetch', 'js:libs']);
 
 /* use all */
 gulp.task('use', ['use:bootstrap', 'use:animate', 'use:font-awesome', 'use:jquery', 'use:fancybox']);

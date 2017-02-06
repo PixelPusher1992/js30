@@ -1,0 +1,2 @@
+"use strict";$(document).ready(function(){function n(){$(this).hasClass("open")?$(this).removeClass("open open-active"):(s.each(function(){$(this).removeClass("open open-active")}),$(this).addClass("open"),$(this).on("transitionend",e))}function e(n){n.originalEvent.propertyName.includes("flex")&&$(this).hasClass("open")&&$(this).addClass("open-active")}var s=$(".panel");s.each(function(){$(this).on("click",n)})});
+//# sourceMappingURL=lesson-5.js.map
