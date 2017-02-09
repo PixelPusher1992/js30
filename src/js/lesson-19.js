@@ -27,7 +27,14 @@ $(document).ready(function () {
         setInterval(() => {
             ctx.drawImage(video, 0, 0, 640, 480);
             let pixels = ctx.getImageData(0, 0, canvas.width, canvas.height);
-            pixels = redEffect(pixels);
+
+            // pixels = redEffect(pixels);
+
+            // pixels = rgbSplit(pixels);
+            // ctx.globalAlpha = 0.2;
+
+            pixels = greenScreen(pixels);
+
             ctx.putImageData(pixels, 0, 0);
         }, 20);
     }
@@ -42,7 +49,6 @@ $(document).ready(function () {
         link.setAttribute('download', 'handsome');
         link.innerHTML = `<img src="${data}" alt="Handsome Man">`;
         strip.insertBefore(link, strip.firstChild);
-        console.log('Hi');
     }
     
     function redEffect(pixels) {
@@ -54,6 +60,36 @@ $(document).ready(function () {
         return pixels;
     }
     
+    function rgbSplit(pixels) {
+        for(let i = 0; i < pixels.data.length; i+=4) {
+            pixels.data[i - 150] = pixels.data[i];
+            pixels.data[i + 500] = pixels.data[i + 1];
+            pixels.data[i - 550] = pixels.data[i + 2];
+        }
+        return pixels;
+    }
+
+    function greenScreen(pixels) {
+        const levels = {};
+        document.querySelectorAll('.rgb input').forEach((input) => {
+           levels[input.name] = input.value;
+        });
+        for(let i = 0; i < pixels.data.length; i+=4) {
+            var red = pixels.data[i];
+            var green = pixels.data[i + 1];
+            var blue = pixels.data[i + 2];
+            var alpha = pixels.data[i + 3];
+
+            if (red >= levels.rmin && red <= levels.rmax &&
+                green >= levels.gmin && green <= levels.gmax &&
+                blue >= levels.bmin && blue <= levels.bmax) {
+                alpha = 0;
+                console.log('Hi');
+            }
+        }
+        return pixels;
+    }
+
     getVideo();
 
     video.addEventListener('canplay', pasteToCanvas);
