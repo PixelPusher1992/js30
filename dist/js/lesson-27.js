@@ -1,0 +1,2 @@
+"use strict";$(document).ready(function(){var e=$(".items"),o=!1,t=void 0,n=void 0;e.on("mousedown",function(s){o=!0,e.addClass("active"),t=s.clientX-e.offset().left,n=e.scrollLeft()}),e.on("mouseleave",function(){o=!1,e.removeClass("active")}),e.on("mouseup",function(){o=!1,e.removeClass("active")}),e.on("mousemove",function(s){if(o){s.preventDefault();var c=s.clientX-e.offset().left,f=c-t;e.scrollLeft(n-f),console.log(f)}})});
+//# sourceMappingURL=lesson-27.js.map

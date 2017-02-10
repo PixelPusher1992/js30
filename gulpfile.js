@@ -98,12 +98,11 @@ function errorLog(error) {
 
 /* main task */
 gulp.task('css', () => {
-    gulp.src(path.css.style, { base: '.' })
+    gulp.src(`${source.css}components/*.scss`)
         .pipe(sourcemaps.init())
         .pipe(sass())
         .on('error', errorLog)
         .pipe(autoprefixer({ browsers: ['defaults', 'ie >= 9', 'last 15 versions'] }))
-        .pipe(concat({path: 'style.min.css', cwd: ''}))
         .pipe(csso())
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(dist.css))

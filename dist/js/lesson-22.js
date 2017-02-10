@@ -1,0 +1,2 @@
+"use strict";$(document).ready(function(){function t(){var t=this.getBoundingClientRect();console.log(t);var i={width:t.width,height:t.height,top:t.top+window.scrollY,left:t.left+window.scrollX};$(".highlight").css({width:i.width+"px",height:i.height+"px",transform:"translate("+i.left+"px, "+i.top+"px)"})}var i=$("a");$("body").append('<span class="highlight"></span>'),i.on("mouseenter",t)});
+//# sourceMappingURL=lesson-22.js.map

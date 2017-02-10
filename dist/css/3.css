@@ -1,0 +1,2 @@
+:root{--base:#ffc600;--spacing:10px;--blur:10px}input[type=range]{display:inline;width:auto}.body3{text-align:center;padding-top:20px;padding-bottom:150px;overflow:hidden;height:100vh;background:#193549;color:#fff;font-family:'helvetica neue',sans-serif;font-weight:100;font-size:50px}.controls{margin-bottom:50px}.input3{width:100px}.img3{padding:var(--spacing);background:var(--base);-webkit-filter:blur(var(--blur));filter:blur(var(--blur))}.hl{color:var(--base)}
+/*# sourceMappingURL=3.css.map */
